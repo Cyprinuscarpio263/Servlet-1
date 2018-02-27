@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  version="3.0"
+  metadata-complete="false">
+	
+	<filter>
+		<filter-name>LoggingFilter</filter-name>
+		<filter-class>filter.LoggingFilter</filter-class>
+		<init-param>
+			<param-name>logFileName</param-name>
+			<param-value>log.txt</param-value>
+		</init-param>
+		<init-param>
+			<param-name>prefix</param-name>
+			<param-value>URI: </param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>LoggingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>DownloadCounterFilter</filter-name>
+		<filter-class>filter.DownloadCounterFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>DownloadCounterFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+</web-app>
