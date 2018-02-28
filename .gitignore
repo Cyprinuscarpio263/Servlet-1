@@ -1,4 +1,7 @@
 .settings/
 build/
+# Eclipse file
 .classpath
 .project
+# IntelliJ IDEA file
+*.iml
